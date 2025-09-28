@@ -16,7 +16,7 @@ const axiosSecure = useAxiosSecure();
     setIsOpen(false)
   }
   // delete plant
-  const handlePlantDelete =async  () => {
+  const handlePlantDelete  = async  () => {
   try{
 await axiosSecure.delete(`/plants/${_id}`)
 toast.success("Plant deleted successfully")
@@ -67,7 +67,7 @@ refetch()
           ></span>
           <span className='relative'>Delete</span>
         </span>
-        <DeleteModal isOpen={isOpen} closeModal={closeModal} />
+        <DeleteModal handleDelete={handlePlantDelete} isOpen={isOpen} closeModal={closeModal} />
       </td>
       <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
         <span

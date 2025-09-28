@@ -68,8 +68,8 @@ export const router = createBrowserRouter([
           <PrivateRoute>
             <SellerRoute>
               <MyInventory />
-            </SellerRoute>
-          </PrivateRoute>
+             </SellerRoute>
+           </PrivateRoute>
         ),
       },
       {
