@@ -7,9 +7,9 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import LoadingSpinner from "../../components/Shared/loadingSpinner";
 import useRole from "../../hooks/useRole";
 import useAuth from "../../hooks/useAuth";
+import LoadingSpinner from "../../components/Shared/LoadingSpinner";
 const PlantDetails = () => {
   const [role] = useRole()
   const {user} = useAuth()
@@ -103,12 +103,12 @@ const PlantDetails = () => {
               Quantity: {quantity} Units Left Only!
             </p>
           </div>
-          <hr className="my-6" />
+          <hr className="my-6" /> 
           <div className="flex justify-between">
             <p className="font-bold text-3xl text-gray-500">Price: {price}$</p>
             <div>
               <Button 
-              disabled={quantity === 0 || role === "seller" || user?.email !== seller?.email}
+              disabled={quantity === 0 || role === "seller" || user?.email === seller?.email}
               onClick={()=>setIsOpen(true)} label={quantity > 0 ? "Purchase" : "Out of stock"} />
             </div>
           </div>
